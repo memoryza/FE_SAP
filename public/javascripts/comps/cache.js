@@ -1,5 +1,5 @@
 /**
- * @file 股市通cache组件
+ * @file cache组件
  * @author wangjincai(jincai.wang@foxmail.com)
  **/
 ;define('cache', function(require, exports, module) {

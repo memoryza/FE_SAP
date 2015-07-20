@@ -1,5 +1,5 @@
 /**
- * 股市通 log模块
+ * log模块
  * author: wangjincai(jincai.wang@foxmail.com)
  **/
 ;define('log', function(require, exports, module) {
