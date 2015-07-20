@@ -1,6 +1,6 @@
 /**
  * @file cookie操作
- * @author wangjincai(wangjincai@baidu.com)
+ * @author wangjincai(jincai.wang@foxmail.com)
  **/
 
 ;define('cookie', function(require, exports, module) {

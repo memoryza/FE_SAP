@@ -1,6 +1,6 @@
 /**
  * @file 新闻列表页面
- * @author wangjincai(wangjincai@baidu.com)
+ * @author wangjincai(jincai.wang@foxmail.com)
  **/
 ;define('page/list', function(require, exports, module) {
 	var msg = require('msg');

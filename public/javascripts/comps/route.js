@@ -1,6 +1,6 @@
 /**
   * @file SAP路由管理
-  * @author wangjincai(wangjincai@baidu.com)
+  * @author wangjincai(jincai.wang@foxmail.com)
   */
 define('route', function(require, exports, module) {
     var util = require('util');

@@ -1,7 +1,7 @@
 /**
   * @file 数据接口
   * @introduce 存储策略说明，暂无
-  * @author wangjincai(wangjincai@baidu.com)
+  * @author wangjincai(jincai.wang@foxmail.com)
 **/
 ;define('data', function(require, exports, module) {
   var cache = require('cache');

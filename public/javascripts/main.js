@@ -1,6 +1,6 @@
 /**
  * @file 项目主入口
- * @author wangjincai(wangjincai@baidu.com)
+ * @author wangjincai(jincai.wang@foxmail.com)
  **/
 
 ;define('main', function(require, exports, module) {

@@ -1,3 +1,7 @@
+/**
+ * @file 项目主页入口
+ * @author memoryza(jincai.wang@foxmail.com)
+ **/
 var express = require('express');
 var qs = require('querystring');
 var router = express.Router();

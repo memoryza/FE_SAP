@@ -1,6 +1,6 @@
 /**
  * @file 益智类游戏页面
- * @author wangjincai(wangjincai@baidu.com)
+ * @author wangjincai(jincai.wang@foxmail.com)
  **/
 ;define('page/brain', function(require, exports, module) {
 	var msg = require('msg');

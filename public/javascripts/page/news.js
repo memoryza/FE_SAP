@@ -1,6 +1,6 @@
 /**
  * @file 最新游戏推荐页面
- * @author wangjincai(wangjincai@baidu.com)
+ * @author wangjincai(jincai.wang@foxmail.com)
  **/
 ;define('page/news', function(require, exports, module) {
 	var msg = require('msg');

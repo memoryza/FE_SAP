@@ -1,6 +1,6 @@
 /**
  * @file 获取首页数据的接口
- * @author wangjincai(wangjincai@baidu.com)
+ * @author wangjincai(jincai.wang@foxmail.com)
  **/
 
 module.exports.getNewGameList = function() {

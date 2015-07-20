@@ -1,6 +1,6 @@
 /**
  * 股市通 log模块
- * author: wangjincai(wangjincai@baidu.com)
+ * author: wangjincai(jincai.wang@foxmail.com)
  **/
 ;define('log', function(require, exports, module) {
   module.exports = {

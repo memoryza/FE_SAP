@@ -1,6 +1,6 @@
 /**
   * @file 工具函数
-  * @author wangjincai(wangjincai@baidu.com)
+  * @author wangjincai(jincai.wang@foxmail.com)
   */
 
 define('util', function(require, exports, module) {
