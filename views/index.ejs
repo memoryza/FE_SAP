@@ -23,7 +23,7 @@
     <div class="menu" id="menuList">
     	<ul>
     		<% for(var i = 0, _len = menuList.length; i < _len; i++) { %>
-    			<li >
+    			<li <%if(menuList[i].act == act){ %> class="current"<%}%> >
             <a  class="_linkTo" href="<%=menuList[i].href%>"><%=menuList[i].name%></a></li>
     		<% } %>
     	</ul>
@@ -33,10 +33,10 @@
    			<a class="loud" href="<%=adInfo.url%>"><%=adInfo.name%></a>
    		</div>
    	<%}%>
-   	<div class="game-list">
+   	<div class="game-list" id="appContainer">
    		<%if(gameList.length > 0) {%>
-   		<div class="game-title">共包含<%=gameList.length%>个游戏</div>
-   		<ul>
+   		<div class="game-title">共包含<span class="_title"><%=gameList.length%></span>个游戏</div>
+   		<ul class="_dataLi">
    			<%for(var i = 0, _len = gameList.length; i < _len; i++) {%>
    			<li>
    				<a href='<%=gameList[i].url%>'>
@@ -46,7 +46,6 @@
    							<%if(act == 'news') {%>
    							 	<div class="news"></div>
    							<%}%>
-   							
    						</div>
    						<div class="info">
 	   						<p class="name"><%=gameList[i].name%></p>
@@ -66,6 +65,9 @@
    			<div class="no-game">没有该分类数据。</div>
    		<%}%>
    	</div>
+    <div class="app-toast">
+      <span id="toast">tips</span>
+    </div>
     <script type="text/javascript">
       var __memoryza = __memoryza || {};
       __memoryza.actionList = JSON.parse('<%=actionList%>'.replace(/&quot;/g, '"'));
@@ -79,12 +81,16 @@
     <script type="text/javascript" src="/javascripts/comps/log.js"></script>
     <script type="text/javascript" src="/javascripts/comps/util.js"></script>
     <script type="text/javascript" src="/javascripts/comps/route.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/tips.js"></script>
     <script type="text/javascript" src="/javascripts/lib/zepto.js"></script>
-    <script type="text/javascript" src="/javascripts/main.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/template.js"></script>
+
+    <!--各个虚拟页面 -->
     <script type="text/javascript" src="/javascripts/page/news.js"></script>
     <script type="text/javascript" src="/javascripts/page/brain.js"></script>
     <script type="text/javascript" src="/javascripts/page/relax.js"></script>
     <script type="text/javascript" src="/javascripts/page/list.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
     <script type="text/javascript">
       require('main');
     </script>

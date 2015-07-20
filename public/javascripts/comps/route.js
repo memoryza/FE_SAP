@@ -8,7 +8,7 @@ define('route', function(require, exports, module) {
     var cpId = '';
     var conf = {};
     var lastStateTS = 0;
-    var routeType = util.getRouteType();
+    exports.routeType = 'hash' || util.getRouteType();
     exports.go = function (opId, curId) {
         msg.pub('pageLeave', {
             from: opId,
@@ -32,7 +32,7 @@ define('route', function(require, exports, module) {
         e.preventDefault();
         state = state || null;
         title = title || '';
-        if (routeType == 'pushState') {
+        if (exports.routeType == 'pushState') {
             window.history.pushState(state, title, url);
             changeHandler();
         } else {
@@ -48,7 +48,7 @@ define('route', function(require, exports, module) {
         var timer = +new Date();
         if ( timer - lastStateTS > 200) {
             lastStateTS = timer;
-            var param = util.getAppParam(routeType);
+            var param = util.getAppParam(exports.routeType);
             var opId = cpId;
             cpId = param.act || conf.act;
             exports.go(opId, cpId);
@@ -59,7 +59,7 @@ define('route', function(require, exports, module) {
     exports.init = function (opts) {
         conf = opts;
         changeHandler();
-        if (routeType == 'pushState') {
+        if (exports.routeType == 'pushState') {
             window.onpopstate = changeHandler;
         } else {
             window.onhashchange = changeHandler;

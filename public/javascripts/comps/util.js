@@ -148,7 +148,8 @@ define('util', function(require, exports, module) {
             return rt;
         }
         rt = 'hash';
-        var url = location.href + '&routetest=' + exports.guidGenerator(); 
+        var querysymbol = location.search || location.hash ? '&' : '?&'
+        var url = location.href + querysymbol +'routetest=' + exports.guidGenerator(); 
         if ('pushState' in window.history && typeof window.history.pushState == 'function') {
             try {
                 window.history.pushState('', '', url);

@@ -10,7 +10,7 @@ var indexMiddle = require('./middle/index');
 /* GET home page. */
 router.get('/', function(req, res) {
 	var params = req.query;
-	var act = params.act;
+	var act = params.act || 'news';
 	var list = {
 		news: indexMiddle.getNewGameList,
 		brain: indexMiddle.getBrainGameList,
@@ -39,15 +39,19 @@ router.get('/', function(req, res) {
 		act: act,
 		menuList: [{
 			href: '/?act=news',
+			act: 'news',
 			name: '最新'
 		},{
 			href: '/?act=brain',
+			act: 'brain',
 			name: '益智'
 		},{
 			href:'/?act=relax',
+			act: 'relax',
 			name: '休闲'
 		},{
 			href:'/?act=list',
+			act: 'list',
 			name: '新闻'
 		}],
 		adInfo: {

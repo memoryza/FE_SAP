@@ -8,8 +8,8 @@ var router = express.Router();
 var qs = require('querystring');
 var indexMiddle = require('./middle/index');
 router.get('/', function(req, res) {
-	var params = qs.parse(req.search);
-	var act = params['act'];
+	var params = req.query;
+	var act = params.act;
 	var data = [];
 	var list = {
 		news: indexMiddle.getNewGameList,
@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 	};
 	if (act && list[act]) {
 		data = list[act]();
-		res.end({errNo: 0, msg: 'success', data: data});
+		res.send({errNo: 0, msg: 'success', data: data});
 	} else {
 		res.send({errNo: 1, msg: 'error', data: data});
 	}
