@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8"/>
+    <title><%=head.title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+	<meta name="MobileOptimized" content="320">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="keywords" content="<%= head.keywords %>"/>
+    <meta name="keywords" content="<%= head.description %>">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="favicon.ico" type="image/x-icon" rel="icon">
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="header">
+    	<a class="home" href="/"></a>	
+    	<div class="logo"></div>
+    </div>
+    <div class="menu" id="menuList">
+    	<ul>
+    		<% for(var i = 0, _len = menuList.length; i < _len; i++) { %>
+    			<li >
+            <a  class="_linkTo" href="<%=menuList[i].href%>"><%=menuList[i].name%></a></li>
+    		<% } %>
+    	</ul>
+    </div>
+    <% if(adInfo && adInfo.name) {%>
+   		<div class="ad">
+   			<a class="loud" href="<%=adInfo.url%>"><%=adInfo.name%></a>
+   		</div>
+   	<%}%>
+   	<div class="game-list">
+   		<%if(gameList.length > 0) {%>
+   		<div class="game-title">共包含<%=gameList.length%>个游戏</div>
+   		<ul>
+   			<%for(var i = 0, _len = gameList.length; i < _len; i++) {%>
+   			<li>
+   				<a href='<%=gameList[i].url%>'>
+   					<div class="game">
+   						<div class="icon">
+   							<img src="<%=gameList[i].logo%>" width="64" height="64"/>
+   							<%if(act == 'news') {%>
+   							 	<div class="news"></div>
+   							<%}%>
+   							
+   						</div>
+   						<div class="info">
+	   						<p class="name"><%=gameList[i].name%></p>
+	   						<div class="star">
+		   						<span class="star-info star-<%=gameList[i].star%>"></span>
+		   						<span>人气：<%=gameList[i].heat%></span>
+	   						</div>
+	   						<p class="desc"><%=gameList[i].desc%></p>
+	   						<div class="start-btn">开始</div>
+	   					</div>
+   					</div>
+   				</a>
+   			</li>
+   			<%}%>
+   		</ul>
+   		<%} else {%>
+   			<div class="no-game">没有该分类数据。</div>
+   		<%}%>
+   	</div>
+    <script type="text/javascript">
+      var __memoryza = __memoryza || {};
+      __memoryza.actionList = JSON.parse('<%=actionList%>'.replace(/&quot;/g, '"'));
+      var _hmt = _hmt || {};
+    </script>
+    <script type="text/javascript" src="/javascripts/comps/mod.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/msg.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/cache.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/data.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/cookie.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/log.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/util.js"></script>
+    <script type="text/javascript" src="/javascripts/comps/route.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/zepto.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+    <script type="text/javascript" src="/javascripts/page/news.js"></script>
+    <script type="text/javascript" src="/javascripts/page/brain.js"></script>
+    <script type="text/javascript" src="/javascripts/page/relax.js"></script>
+    <script type="text/javascript" src="/javascripts/page/list.js"></script>
+    <script type="text/javascript">
+      require('main');
+    </script>
+  </body>
+</html>
