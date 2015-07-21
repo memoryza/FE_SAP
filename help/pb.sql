@@ -47,9 +47,9 @@ CREATE INDEX game_id
   (id);
 
 --select * from game where gtype->>'news' = '1';
+-- test Date
+-- INSERT INTO game( name, description, star, url, hot, gtype,logo)
+--   VALUES ('俄罗斯方块', '世界经典游戏', 5, 'http://sxiao.4399.com/4399swf/upload_swf/ftp8/zzssjjys/20120412/2.swf', 10000, '{"news":"1"}', 'http://p2.qhimg.com/t01005575ac1e4665ed.png');
 
-  INSERT INTO game( name, description, star, url, hot, gtype)
-    VALUES ('俄罗斯方块', '世界经典游戏', 5, 'http://sxiao.4399.com/4399swf/upload_swf/ftp8/zzssjjys/20120412/2.swf', 10000, '{"news":"1"}');
-
-  INSERT INTO game( name, description, star, url, hot, gtype)
-    VALUES ('2048', '益智类游戏，耐玩，上手快', 5, 'http://www.aililuo.com/demo/canvas.html', 10000, '{"brain":"1"}');
+-- INSERT INTO game( name, description, star, url, hot, gtype, logo)
+--    VALUES ('2048', '益智类游戏，耐玩，上手快', 5, 'http://www.aililuo.com/demo/canvas.html', 10000, '{"brain":"1"}', 'http://p3.gexing.com/touxiang/2012/7/14/201274540040147.jpg');
