@@ -58,7 +58,7 @@ em {
     border:2px solid #3ba4ff;
     border-radius: 15px;
     background-color: #ffffff;
-    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 .menu ul li {
     display: inline-block;

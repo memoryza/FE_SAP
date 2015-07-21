@@ -7,9 +7,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var ajax = require('./routes/ajax');
-
+var gzipRes = require('./routes/gzip');
 var app = express();
 
 // ***system config***
@@ -24,13 +23,17 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/javascripts', function (req, res, next) {
+    res.send('hello');
+})
+
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
-app.use('/users', users);
 app.use('/ajax', ajax);
+app.use('/dist/javascripts', gzipRes);
 
-
+// app.use('/stylesheets', gzipRes);
 // ***error config**
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,14 +58,14 @@ app.use(function(err, req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
+// if (app.get('env') === 'development') {
+//     app.use(function(err, req, res, next) {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: err
+//         });
+//     });
+// }
 app.listen(9999);
 module.exports = app;
