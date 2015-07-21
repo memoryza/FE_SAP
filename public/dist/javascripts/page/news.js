@@ -1,0 +1,1 @@
+define("page/news",function(a,b,c){var d=a("msg");d.sub("pageEnter",function(a){"news"==a.to}),d.sub("pageLeave",function(a){"news"==a.from})});

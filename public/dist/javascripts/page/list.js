@@ -1,0 +1,1 @@
+define("page/list",function(a,b,c){var d=a("msg");d.sub("pageEnter",function(a){"list"==a.to}),d.sub("pageLeave",function(a){"list"==a.from})});

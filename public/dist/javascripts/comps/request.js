@@ -1,0 +1,1 @@
+define("request",function(a,b,c){var d=a("zepto");b.req=function(a,b,c,e){e=e||c;var f=+new Date;d.ajax({url:"/ajax",type:"GET",datatype:"json",data:a,timeout:5e3,success:function(a){0===a.errNo?b&&b(a):c&&c()},error:function(a){var b=arguments[1]||"timeout";"timeout"===b||"abort"==b&&(new Date).getTime()-f<100?e&&e():e&&e()}})}});

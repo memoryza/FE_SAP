@@ -1,0 +1,1 @@
+define("page/relax",function(a,b,c){var d=a("msg");d.sub("pageEnter",function(a){"relax"==a.to}),d.sub("pageLeave",function(a){"relax"==a.from})});

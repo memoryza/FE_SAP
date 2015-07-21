@@ -1,0 +1,2 @@
+1、gzip只做了资源的合并，但是express如何开启gzip没做（0_0要求看看expressAPI没研究过)
+2、资源请求处理存在问题，这里没做cachelist（不知道怎么返回304，没找到express设置head头的方法）

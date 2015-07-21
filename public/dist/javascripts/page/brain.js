@@ -1,0 +1,1 @@
+define("page/brain",function(a,b,c){var d=a("msg");d.sub("pageEnter",function(a){"brain"==a.to}),d.sub("pageLeave",function(a){"brain"==a.from})});
