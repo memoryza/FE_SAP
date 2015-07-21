@@ -20,8 +20,6 @@ a, a:focus{
     color: #ffffff;
     -webkit-tap-highlight-color:transparent;
     tap-highlight-color:transparent;
-    -webkit-user-modify:read-write-plaintext-only; 
-    user-modify:read-write-plaintext-only; 
     outline: 0;
 }
 em {

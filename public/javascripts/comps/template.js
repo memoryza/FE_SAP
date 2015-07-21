@@ -22,9 +22,9 @@ define('template', function(require, exports, module) {
 		   						<p class="name"><%gameList[i].name%></p>\
 		   						<div class="star">\
 			   						<span class="star-info star-<%gameList[i].star%>"></span>\
-			   						<span>人气：<%gameList[i].heat%></span>\
+			   						<span>人气：<%gameList[i].hot%></span>\
 		   						</div>\
-		   						<p class="desc"><%gameList[i].desc%></p>\
+		   						<p class="desc"><%gameList[i].description%></p>\
 		   						<div class="start-btn">开始</div>\
 		   					</div>\
 	   					</div>\

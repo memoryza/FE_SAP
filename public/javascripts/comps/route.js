@@ -8,7 +8,7 @@ define('route', function(require, exports, module) {
     var cpId = '';
     var conf = {};
     var lastStateTS = 0;
-    exports.routeType = 'hash' || util.getRouteType();
+    exports.routeType = util.getRouteType();
     exports.go = function (opId, curId) {
         msg.pub('pageLeave', {
             from: opId,
