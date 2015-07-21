@@ -11,7 +11,7 @@
 	var tips = require('tips');
 	var template = require('template');
 	var $ = require('zepto');
-
+	var request = require('request');
 	var gEvent = {
 		container: $('#appContainer'),
 		// 主菜单切换
@@ -35,16 +35,17 @@
 			var $li = gEvent.container.find('._dataLi').clone();
 			var startTime = +new Date();
 			tips.loading(gEvent.container);
-			$.getJSON('/ajax', {act: act}, function (d) {
-				if (d.errNo == 0) {
-					// loading 有一定效果,哈哈负值也没事的
-					var diffTime = 1000 - (+new Date() - startTime);
-					setTimeout(function() {
-						gEvent.container.html(util.templateEngine(template.getGameListTpl(), {gameList: d.data, act: act}));
-					}, diffTime);
-				} else {
-					tips.toast('获取列表内容失败。');
-				}
+			request.req({act: act}, function (d) {
+				// loading 有一定效果,哈哈负值也没事的
+				var diffTime = 1000 - (+new Date() - startTime);
+				setTimeout(function() {
+					gEvent.container.html(util.templateEngine(template.getGameListTpl(), {gameList: d.data, act: act}));
+				}, diffTime);
+			
+			}, function() {
+				tips.toast('获取列表内容失败。');
+			}, function() {
+				tips.toast('网络请求错误');
 			});
 		}
 	};

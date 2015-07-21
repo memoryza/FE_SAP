@@ -23,7 +23,6 @@ router.get('/', function(req, res) {
 		res.render('error', {message: '您走错地方了', error: {status: 'error', stack: null}});
 	}
    function fallback(gameList) {
-   	console.log(gameList)
 		var actionList = {
 			'news': 1,
 			'brain': 1,

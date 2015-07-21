@@ -21,7 +21,6 @@ router.get('/', function(req, res) {
 		list[act](function(data) {
 			res.send({errNo: 0, msg: 'success', data: data});
 		});
-		
 	} else {
 		res.send({errNo: 1, msg: 'error', data: data});
 	}
