@@ -8,14 +8,14 @@
 var sourceCacheList = {};
 var express = require('express');
 var qs = require('querystring');
-var zipRouter = express.Router();
+var router = express.Router();
 var zlib = require('zlib');
 var resPattern = /^\?.*\.(js|css)$/;
  var path = require('path');
  var sourcePath = path.join(__dirname, '../public/dist');
  var cssPath = sourcePath + '/stylesheets/';
  var jsPath = sourcePath + '/javascripts/';
-zipRouter.get('/', function(req, res) {
+router.get('/', function(req, res) {
     var queryStr = '';
 	for(var i in req.query) {
 		if (i && req.query.hasOwnProperty(i) && i.indexOf('?') === 0) {
@@ -66,4 +66,4 @@ function combine(qs, res, path) {
 	}	
 }
 
-module.exports = zipRouter;
+module.exports = router;

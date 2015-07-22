@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var ajax = require('./routes/ajax');
-var gzipRes = require('./routes/gzip');
+var  = require('./routes/combine');
 var app = express();
 
 // ***system config***
@@ -31,9 +31,9 @@ app.use('/javascripts', function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/ajax', ajax);
-app.use('/dist/javascripts', gzipRes);
+app.use('/dist/javascripts', combineRes);
 
-// app.use('/stylesheets', gzipRes);
+// app.use('/stylesheets', combineRes);
 // ***error config**
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
