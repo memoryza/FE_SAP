@@ -16,6 +16,7 @@ COMMENT ON SCHEMA public
 
 -- DROP TABLE game;
 
+
 CREATE TABLE game
 (
   id serial NOT NULL,
@@ -24,7 +25,8 @@ CREATE TABLE game
   star smallint, -- 评星
   url character varying(200),
   hot numeric, -- 人气指数
-  type character varying(100)
+  gtype json,
+  logo character varying(200)
 )
 WITH (
   OIDS=FALSE

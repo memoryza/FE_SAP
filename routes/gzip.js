@@ -41,17 +41,17 @@ function combine(qs, res, path) {
 		res.send(sourceCacheList['qs']);
 	} else {
 		var resList = qs.split(',');
-		var fileStr = '';
+		var fileStr = [];
 		var realFileCount = resList.length;;
 		for(var i = 0, _len = realFileCount; i < _len; i++) {
 			(function(j) {
 				var file = path + resList[j];
 				
 				if (fs.existsSync(file)) {
-					fileStr += fs.readFileSync(file);
+					fileStr[j]= fs.readFileSync(file);
 					if (j == realFileCount - 1) {
-						sourceCacheList[qs] = fileStr;
-						res.send(fileStr);
+						sourceCacheList[qs] = fileStr.join(';');
+						res.send(sourceCacheList[qs]);
 					}
 				} else {
 					realFileCount--;
