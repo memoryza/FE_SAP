@@ -67,5 +67,8 @@ app.use(function(err, req, res, next) {
 //         });
 //     });
 // }
+process.on('SIGTERM', function () {
+    process.exit(0);
+});
 app.listen(9999);
 module.exports = app;
