@@ -148,8 +148,17 @@ define('util', function(require, exports, module) {
             return rt;
         }
         rt = 'hash';
-        var querysymbol = location.search || location.hash ? '&' : '?&'
-        var url = location.href + querysymbol +'routetest=' + exports.guidGenerator(); 
+        var querysymbol = location.search || location.hash ? '&' : '?&';
+        var params = util.getAppParam('pushState');
+
+        // 防止带routetype的url分享出去以后产生重复的queryParam
+        var url;
+        if (params['routetest']) {
+            params['routetest'] = exports.guidGenerator();
+            url = location.origin + '?' + exports.urlParam(params);
+        } else {
+            url = location.href + querysymbol +'routetest=' + exports.guidGenerator(); 
+        }
         if ('pushState' in window.history && typeof window.history.pushState == 'function') {
             try {
                 window.history.pushState('', '', url);

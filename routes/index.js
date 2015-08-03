@@ -6,9 +6,10 @@ var express = require('express');
 var qs = require('querystring');
 var router = express.Router();
 var indexMiddle = require('../include/middle/index');
-
+var detect = require('./detect');
 /* GET home page. */
 router.get('/', function(req, res) {
+
 	var params = req.query;
 	var act = params.act || 'news';
 	var list = {
@@ -59,8 +60,13 @@ router.get('/', function(req, res) {
 			},
 			gameList: gameList,
 			actionList: JSON.stringify(actionList)
-	 	 };
-	  res.render('index', data);
+	 	};
+	   	var device = detect(req.headers['user-agent']);
+	   	if (device.os && device.os.phone) {
+			res.render('m/index', data);
+	   	} else {
+	   		res.render('pc/index', data);
+	   	}
    }
 });
 

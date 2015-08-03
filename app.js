@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var ajax = require('./routes/ajax');
-var  = require('./routes/combine');
+var combineRes = require('./routes/combine');
 var app = express();
 
 // ***system config***
